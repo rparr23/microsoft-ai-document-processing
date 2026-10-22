@@ -1,0 +1,6 @@
+vendor: Fabrikam Services
+invoice_number: INV-10043
+invoice_date: 2026-10-15
+currency: USD
+total: 480.50
+purchase_order: PO-801

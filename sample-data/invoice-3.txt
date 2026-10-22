@@ -1,0 +1,6 @@
+vendor: Northwind Training
+invoice_number: INV-10044
+invoice_date: 2026-10-15
+currency: USD
+total: 925.00
+purchase_order: PO-802

@@ -1,0 +1,29 @@
+[
+  {
+    "document_id": "doc-1",
+    "vendor": "Contoso Supplies",
+    "invoice_number": "INV-10042",
+    "invoice_date": "2026-10-15",
+    "currency": "USD",
+    "total": "1250.00",
+    "purchase_order": "PO-800"
+  },
+  {
+    "document_id": "doc-2",
+    "vendor": "Fabrikam Services",
+    "invoice_number": "INV-10043",
+    "invoice_date": "2026-10-15",
+    "currency": "USD",
+    "total": "480.50",
+    "purchase_order": "PO-801"
+  },
+  {
+    "document_id": "doc-3",
+    "vendor": "Northwind Training",
+    "invoice_number": "INV-10044",
+    "invoice_date": "2026-10-15",
+    "currency": "USD",
+    "total": "925.00",
+    "purchase_order": "PO-802"
+  }
+]

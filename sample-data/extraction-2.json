@@ -1,0 +1,29 @@
+{
+  "document_id": "doc-2",
+  "fields": {
+    "vendor": {
+      "value": "Fabrikam Services",
+      "confidence": 0.98
+    },
+    "invoice_number": {
+      "value": "INV-10043",
+      "confidence": 0.98
+    },
+    "invoice_date": {
+      "value": "2026-10-15",
+      "confidence": 0.98
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.98
+    },
+    "total": {
+      "value": "480.50",
+      "confidence": 0.98
+    },
+    "purchase_order": {
+      "value": "PO-801",
+      "confidence": 0.98
+    }
+  }
+}

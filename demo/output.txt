@@ -1,0 +1,49 @@
+Executed local reference walkthrough; no Microsoft delivery.
+
+$ python3 src/app.py process sample-data/extraction-1.json
+{
+  "state": "pending_approval",
+  "issues": [],
+  "values": {
+    "vendor": "Contoso Supplies",
+    "invoice_number": "INV-10042",
+    "invoice_date": "2026-10-15",
+    "currency": "USD",
+    "total": "1250.00",
+    "purchase_order": "PO-800"
+  },
+  "duplicate_upload": false
+}
+
+
+
+$ python3 src/app.py review --id doc-1 --decision approve --reviewer synthetic-reviewer
+{
+  "state": "approved",
+  "reviewer": "synthetic-reviewer",
+  "document_id": "doc-1"
+}
+
+
+
+$ python3 src/app.py process sample-data/extraction-3.json
+{
+  "state": "needs_review",
+  "issues": [
+    "low_confidence:currency",
+    "low_confidence:invoice_date",
+    "low_confidence:invoice_number",
+    "low_confidence:purchase_order",
+    "low_confidence:total",
+    "low_confidence:vendor"
+  ],
+  "values": {
+    "vendor": "Northwind Training",
+    "invoice_number": "INV-10044",
+    "invoice_date": "2026-10-15",
+    "currency": "USD",
+    "total": "925.00",
+    "purchase_order": "PO-802"
+  },
+  "duplicate_upload": false
+}

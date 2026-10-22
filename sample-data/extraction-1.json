@@ -1,0 +1,29 @@
+{
+  "document_id": "doc-1",
+  "fields": {
+    "vendor": {
+      "value": "Contoso Supplies",
+      "confidence": 0.98
+    },
+    "invoice_number": {
+      "value": "INV-10042",
+      "confidence": 0.98
+    },
+    "invoice_date": {
+      "value": "2026-10-15",
+      "confidence": 0.98
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.98
+    },
+    "total": {
+      "value": "1250.00",
+      "confidence": 0.98
+    },
+    "purchase_order": {
+      "value": "PO-800",
+      "confidence": 0.98
+    }
+  }
+}

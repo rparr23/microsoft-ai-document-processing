@@ -1,0 +1,29 @@
+{
+  "document_id": "doc-3",
+  "fields": {
+    "vendor": {
+      "value": "Northwind Training",
+      "confidence": 0.72
+    },
+    "invoice_number": {
+      "value": "INV-10044",
+      "confidence": 0.72
+    },
+    "invoice_date": {
+      "value": "2026-10-15",
+      "confidence": 0.72
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.72
+    },
+    "total": {
+      "value": "925.00",
+      "confidence": 0.72
+    },
+    "purchase_order": {
+      "value": "PO-802",
+      "confidence": 0.72
+    }
+  }
+}

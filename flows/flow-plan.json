@@ -1,0 +1,58 @@
+{
+  "artifact_type": "implementation_specification_not_importable_export",
+  "project": "Intelligent Document Processing System",
+  "actions": [
+    {
+      "order": 1,
+      "action": "File-created trigger",
+      "configuration": "Only Incoming folder. Ignore output moves and unsupported file types. Capture unique file ID, version and checksum."
+    },
+    {
+      "order": 2,
+      "action": "Reserve processing key",
+      "configuration": "Unique DocumentVersionKey; atomic insert before processing. Existing success returns prior state."
+    },
+    {
+      "order": 3,
+      "action": "Extract invoice information",
+      "configuration": "AI Builder prebuilt invoice model receives file content. Capture model version and raw output in restricted storage."
+    },
+    {
+      "order": 4,
+      "action": "Normalize fields",
+      "configuration": "Map VendorName, InvoiceId, InvoiceDate, InvoiceTotal, PurchaseOrder and currency to the documented schema. Exact connector tokens depend on model output."
+    },
+    {
+      "order": 5,
+      "action": "Apply validation",
+      "configuration": "Check required fields, ISO date, allowed currency, positive two-decimal total and confidence >=0.85. This threshold is a configurable demo policy, not Microsoft guidance."
+    },
+    {
+      "order": 6,
+      "action": "Reserve invoice key",
+      "configuration": "Normalize vendor and number; reserve under unique constraint. Block duplicates; do not auto-pay."
+    },
+    {
+      "order": 7,
+      "action": "Review or approval",
+      "configuration": "Uncertain data => Review folder and correction request. Clean data => Start and wait for finance approval. Never approve unresolved issues."
+    },
+    {
+      "order": 8,
+      "action": "Persist final decision",
+      "configuration": "Record verified reviewer and timestamp. Approved => Approved folder, rejected => Rejected folder and release reservation. No financial transaction occurs."
+    },
+    {
+      "order": 9,
+      "action": "Failure handling",
+      "configuration": "Log correlation ID without document contents. Retain original file and route to recovery queue."
+    }
+  ],
+  "connection_references": "Create and bind in the target tenant",
+  "retry_policy": {
+    "transient_only": true,
+    "max_attempts": 3,
+    "respect_retry_after": true,
+    "ambiguous_remote_write": "reconcile_before_retry"
+  }
+}
